@@ -2,10 +2,19 @@ import { SaveOutlined } from "@mui/icons-material"
 import { Button, Grid, TextField, Typography } from "@mui/material"
 import { ImageGallery } from "../components"
 
-export const NoteView = () => {
+export const NoteView = () => { // usado en JournaPage.jsx
+
   return ( // fontSize tamaño de la letra
 
-    <Grid container direction='row' justifyContent='space-between' alignItems='center' sx={ { mb: 1 } } >
+    <Grid 
+        container 
+        direction='row' 
+        justifyContent='space-between' 
+        alignItems='center' 
+        sx={ { mb: 1 } }
+        className="animate__animated animate__fadeIn animate__faster"
+        >
+
         <Grid item>
             <Typography fontSize={ 39 } fontWeight="light">20 de Enero de 1995</Typography>
         </Grid>

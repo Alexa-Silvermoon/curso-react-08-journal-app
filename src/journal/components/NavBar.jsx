@@ -1,8 +1,21 @@
+import { useDispatch } from 'react-redux';
 import { MenuOutlined } from "@mui/icons-material";
 import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 import LogoutIcon from '@mui/icons-material/Logout';
+import { startLogout } from '../../store/auth/thunks';
 
 export const NavBar = ( { drawerWidth } ) => { // drawerWidth = 240 px desde JournalLayout
+
+    const dispatch = useDispatch();
+
+    const onLogOut = () => {
+
+        // console.log( 'onLogOut' );
+
+        dispatch( startLogout() );
+
+    }
+
   return (
 
     <AppBar 
@@ -25,7 +38,10 @@ export const NavBar = ( { drawerWidth } ) => { // drawerWidth = 240 px desde Jou
             <Grid container direction='row' justifyContent='space-between' alignItems='center'>
                 <Typography variant='h6' noWrap component='div'>Journal App</Typography>
 
-                <IconButton color='error'> {/* icono de logout color rojo */}
+                <IconButton 
+                    color='error'
+                    onClick={ onLogOut }
+                    > {/* icono de logout color rojo */}
                     {/* <LogoutOutlined/> */}
                     <LogoutIcon/>
                 </IconButton>
@@ -38,3 +54,4 @@ export const NavBar = ( { drawerWidth } ) => { // drawerWidth = 240 px desde Jou
 
 // NavBar https://www.udemy.com/course/react-cero-experto/learn/lecture/32285010#questions
 // https://mui.com/material-ui/material-icons/?query=logout
+// logout en firebase https://www.udemy.com/course/react-cero-experto/learn/lecture/20120432#questions

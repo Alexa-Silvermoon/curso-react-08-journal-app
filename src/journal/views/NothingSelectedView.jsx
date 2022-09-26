@@ -1,10 +1,12 @@
 import { StarOutline } from "@mui/icons-material"
 import { Grid, Typography } from "@mui/material"
 
-export const NothingSelectedView = () => {
+export const NothingSelectedView = () => { // usado en JournaPage.jsx
+  
   return (
 
     <Grid
+      className="animate__animated animate__fadeIn animate__faster"
       container
       spacing={ 0 }
       direction="column"

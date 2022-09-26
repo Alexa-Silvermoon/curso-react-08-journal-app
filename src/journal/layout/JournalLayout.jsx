@@ -7,7 +7,7 @@ const drawerWidth = 240;
 export const JournalLayout = ( { children } ) => {
   return (
 
-    <Box sx={ { display: 'flex' } } >
+    <Box sx={ { display: 'flex' } } className="animate__animated animate__fadeIn animate__faster" >
 
         {/* Navbar drawerWidth */}
         <NavBar drawerWidth={ drawerWidth }/>
@@ -33,3 +33,4 @@ export const JournalLayout = ( { children } ) => {
 // JournalLayout y JournalPage https://www.udemy.com/course/react-cero-experto/learn/lecture/32284958#questions
 // NavBar https://www.udemy.com/course/react-cero-experto/learn/lecture/32285010#questions
 // Sidebar https://www.udemy.com/course/react-cero-experto/learn/lecture/32285098#questions
+// animaciones para la aplicacion https://www.udemy.com/course/react-cero-experto/learn/lecture/32298666#questions

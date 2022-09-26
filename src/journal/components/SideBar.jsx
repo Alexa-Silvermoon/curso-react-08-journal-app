@@ -1,7 +1,12 @@
+import { useSelector } from "react-redux";
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
 import { TurnedInNot } from '@mui/icons-material';
 
 export const SideBar = ( { drawerWidth = 240 } ) => {
+
+    const { displayName } = useSelector( state => state.auth ); // nombre de usuario desde authSlice.js
+    // console.log( displayName );
+
   return (
 
     // sx es styles, sm para pantallas pequeñas
@@ -21,7 +26,7 @@ export const SideBar = ( { drawerWidth = 240 } ) => {
 
             <Toolbar>
                 <Typography variant='6' noWrap component='div'>
-                    Alexander Millan
+                    { displayName }
                 </Typography>
             </Toolbar>
             <Divider/>
@@ -53,3 +58,4 @@ export const SideBar = ( { drawerWidth = 240 } ) => {
 }
 
 // Sidebar https://www.udemy.com/course/react-cero-experto/learn/lecture/32285098#questions
+// logout en firebase https://www.udemy.com/course/react-cero-experto/learn/lecture/20120432#questions
