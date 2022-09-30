@@ -1,6 +1,7 @@
 import { async } from "@firebase/util";
 import { FirebaseAuth } from "../../firebase/config";
 import { loginWithEmailPassword, registerUserWithEmailPassword, signInWithGoogle, logoutFirebase } from "../../firebase/providers";
+import { clearNotesLogout } from "../journal/journalSlice";
 import { checkingCredentials, login, logout } from "./authSlice";
 
 export const checkingAuthentication = ( email, password ) => {
@@ -78,6 +79,8 @@ export const startLogout = () => { // usando en Navbar.jsx
 
         await logoutFirebase(); // cierra sesion de google y firebase
 
+        dispatch( clearNotesLogout() );
+
         dispatch( logout() );
     }
 }
@@ -90,3 +93,4 @@ export const startLogout = () => { // usando en Navbar.jsx
 // actualizar displayName y autenticar el usuario https://www.udemy.com/course/react-cero-experto/learn/lecture/32297916#questions
 // tarea login de usuario https://www.udemy.com/course/react-cero-experto/learn/lecture/32298114#questions
 // logout en firebase https://www.udemy.com/course/react-cero-experto/learn/lecture/20120432#questions
+// limpiar notas al cerrar sesion, purgar logout https://www.udemy.com/course/react-cero-experto/learn/lecture/32349356#questions/17924254

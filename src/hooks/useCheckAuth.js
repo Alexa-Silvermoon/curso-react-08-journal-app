@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { onAuthStateChanged } from "firebase/auth";
 import { FirebaseAuth } from "../firebase/config";
 import { login, logout } from "../store/auth";
+import { startLoadingNotes } from "../store/journal";
 
 export const useCheckAuth = () => { // hacia AppRouter.jsx
 
@@ -20,6 +21,7 @@ export const useCheckAuth = () => { // hacia AppRouter.jsx
             const { uid, email, displayName, photoURL } = user;
 
             dispatch( login( { uid, email, displayName, photoURL } ) ); // usuario si autenticado
+            dispatch( startLoadingNotes() );
 
         })
 
@@ -30,3 +32,4 @@ export const useCheckAuth = () => { // hacia AppRouter.jsx
 }
 
 // custom hook para autenticacion https://www.udemy.com/course/react-cero-experto/learn/lecture/32298508#questions
+// cargando notas de Firesotore https://www.udemy.com/course/react-cero-experto/learn/lecture/20126428#questions

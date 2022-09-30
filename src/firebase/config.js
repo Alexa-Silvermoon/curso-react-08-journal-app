@@ -17,7 +17,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const FirebaseApp = initializeApp(firebaseConfig);
-export const FirebaseAuth = getAuth( FirebaseApp );
+export const FirebaseAuth = getAuth( FirebaseApp ); // usado en providers.js
 export const FirebaseDB = getFirestore( FirebaseApp );
 
 // configuracion inicial de firebase https://www.udemy.com/course/react-cero-experto/learn/lecture/20081730?start=45#questions

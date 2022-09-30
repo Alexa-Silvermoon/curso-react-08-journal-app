@@ -55,3 +55,4 @@ export const NavBar = ( { drawerWidth } ) => { // drawerWidth = 240 px desde Jou
 // NavBar https://www.udemy.com/course/react-cero-experto/learn/lecture/32285010#questions
 // https://mui.com/material-ui/material-icons/?query=logout
 // logout en firebase https://www.udemy.com/course/react-cero-experto/learn/lecture/20120432#questions
+// limpiar notas al cerrar sesion, purgar logout https://www.udemy.com/course/react-cero-experto/learn/lecture/32349356#questions/17924254

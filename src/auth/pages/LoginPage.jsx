@@ -7,18 +7,22 @@ import { AuthLayout } from '../layout/AuthLayout';
 import { useForm } from '../../hooks';
 import { checkingAuthentication, startGoogleSignIn, startLoginWithEmailPassword } from '../../store/auth';
 
+const formData = {
+
+  // esto es necesario ya que sino, genera error debido al segundo useEffect en useForm.js, el error se manifieta en el login
+
+  email: '',
+  password: '' 
+}
+
 export const LoginPage = () => {
 
   const dispatch = useDispatch();
 
-  const { status, errorMessage } = useSelector( state => state.auth ); // saber el estado de autenticacion
+  const { status, errorMessage } = useSelector( state => state.auth ); // useSelector apunta a la store.js saber el estado de autenticacion
 
-  const { email, password, onInputChange } = useForm({
-
-    email: '',
-    password: ''
-
-  });
+  // const { email, password, onInputChange } = useForm( /* { email: '', password: '' } */ );
+  const { email, password, onInputChange } = useForm( formData );
 
   const isAuthenticating = useMemo( () => status === 'checking', [ status ] ); // saber si justo el usuario se esta autenticando
   // si status cambia se obtiene un nuevo valor, sino cambia, no se vuelve a calcular, la dependencia es [ status ]
@@ -117,3 +121,4 @@ export const LoginPage = () => {
 // disparar accion de autenticacion https://www.udemy.com/course/react-cero-experto/learn/lecture/32296386#questions
 // tarea login de usuario https://www.udemy.com/course/react-cero-experto/learn/lecture/32298114#questions
 // animaciones para la aplicacion https://www.udemy.com/course/react-cero-experto/learn/lecture/32298666#questions
+// activar una nota para su edicion https://www.udemy.com/course/react-cero-experto/learn/lecture/32313914#questions

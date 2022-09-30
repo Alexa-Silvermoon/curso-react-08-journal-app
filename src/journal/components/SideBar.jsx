@@ -1,10 +1,11 @@
 import { useSelector } from "react-redux";
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
-import { TurnedInNot } from '@mui/icons-material';
+import { SideBarItem } from "./SideBarItem";
 
 export const SideBar = ( { drawerWidth = 240 } ) => {
 
-    const { displayName } = useSelector( state => state.auth ); // nombre de usuario desde authSlice.js
+    const { displayName } = useSelector( state => state.auth ); // apunta a store.js
+    const { notes } = useSelector( state => state.journal ); // apunta a store.js
     // console.log( displayName );
 
   return (
@@ -33,12 +34,17 @@ export const SideBar = ( { drawerWidth = 240 } ) => {
 
             <List>
                 {
-                    ['item 1','item 2','item 3'].map( text => (
+                    notes.map( note => (
+
+                        <SideBarItem key={ note.id } { ...note }/>
+
+                        /* 
+                        ['item 1','item 2','item 3'].map( text => (
 
                         <ListItem key={ text } disablePadding>
                             <ListItemButton>
-                                <ListItemIcon> {/* icono pequeño de item */}
-                                    <TurnedInNot/>
+                                <ListItemIcon>
+                                <TurnedInNot/>
                                 </ListItemIcon>
                                 <Grid container>
                                     <ListItemText primary={ text }/>
@@ -46,6 +52,7 @@ export const SideBar = ( { drawerWidth = 240 } ) => {
                                 </Grid>
                             </ListItemButton>
                         </ListItem>
+                        */
 
                     ))
                 }
@@ -59,3 +66,4 @@ export const SideBar = ( { drawerWidth = 240 } ) => {
 
 // Sidebar https://www.udemy.com/course/react-cero-experto/learn/lecture/32285098#questions
 // logout en firebase https://www.udemy.com/course/react-cero-experto/learn/lecture/20120432#questions
+// mostrar las notas en el menu lateral sidebar https://www.udemy.com/course/react-cero-experto/learn/lecture/20127394#questions

@@ -18,7 +18,7 @@ export const authSlice = createSlice({ // usado en store.js
 
     reducers: {
 
-        login: ( state, { payload } ) => {
+        login: ( state, { payload } ) => { // usado en thunks.js
 
             state.status = 'authenticated', // 'checking, not-authenticated, authenticated
             state.uid = payload.uid;
@@ -29,7 +29,7 @@ export const authSlice = createSlice({ // usado en store.js
 
 
         },
-        logout: ( state, { payload } ) => {
+        logout: ( state, { payload } ) => { // usado en thunks.js
 
             state.status = 'not-authenticated', // 'checking, not-authenticated, authenticated
             state.uid = null;
@@ -39,7 +39,7 @@ export const authSlice = createSlice({ // usado en store.js
             state.errorMessage = payload?.errorMessage; // en caso de error al autenticar y hacer logout a la fuerza
 
         },
-        checkingCredentials: ( state ) => {
+        checkingCredentials: ( state ) => { // usado en thunks.js
 
             state.status = 'checking';
 
@@ -49,7 +49,7 @@ export const authSlice = createSlice({ // usado en store.js
 });
 
 // Action creators are generated for each case reducer function
-export const { login, logout, checkingCredentials } = authSlice.actions;
+export const { login, logout, checkingCredentials } = authSlice.actions; // usado en store.js
 
 // configurar authSlice https://www.udemy.com/course/react-cero-experto/learn/lecture/32295280#questions
 // manejo del formulario de login https://www.udemy.com/course/react-cero-experto/learn/lecture/32295454#questions

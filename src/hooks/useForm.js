@@ -20,6 +20,12 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => { // formDa
 
   }, [ formState ] ); // cada vez que cambia el state se dispara el createValidators();
 
+  useEffect(() => { // sirve para notificar cambios
+
+    setFormState( initialForm );
+
+  }, [ initialForm ] ); // cada vez que selecciono una nota (item) en NoteView.jsx en el sidebar se debe mostrar en el html
+
   // const { username, email, password } = formState;
 
   const isFormValid = useMemo( () => {
@@ -103,3 +109,4 @@ export const useForm = ( initialForm = {}, formValidations = {} ) => { // formDa
 
 // manejo de errores de formulario en RegisterPage.jsx https://www.udemy.com/course/react-cero-experto/learn/lecture/20097038#questions
 // validar desde nuestro custom hook https://www.udemy.com/course/react-cero-experto/learn/lecture/32296938?start=450#questions
+// activar una nota para su edicion https://www.udemy.com/course/react-cero-experto/learn/lecture/32313914#questions

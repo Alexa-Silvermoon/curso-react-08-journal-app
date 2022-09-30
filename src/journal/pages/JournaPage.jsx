@@ -1,24 +1,43 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { IconButton, Typography } from "@mui/material"
 import { AddOutlined } from "@mui/icons-material"
 import { JournalLayout } from "../layout/JournalLayout"
 import { NoteView, NothingSelectedView } from "../views"
+import { startNewNote } from "../../store/journal"
 
 export const JournaPage = () => {
+
+  const dispatch = useDispatch();
+
+  const { isSaving, active } = useSelector( state => state.journal ); // useSelector apunta a la store.js
+
+  const onClickNewNote = () => {
+
+    dispatch( startNewNote() ); // agregar nota " + "
+
+
+  }
+
   return (
 
     <JournalLayout>
 
       {/* <Typography>xddddd</Typography> */}
 
+      {
+        ( !!active ) ? <NoteView/> : <NothingSelectedView/> /* !! convierte valor a boolean  state.active */
+      }
 
       {/* NothingSelected */}
-      <NothingSelectedView/>
+      {/* <NothingSelectedView/> */}
 
       {/* NoteView */}
       {/* <NoteView/> */}
 
       <IconButton 
+        onClick={ onClickNewNote }
         size='large'
+        disabled={ isSaving }
         sx={ { 
           color: 'white',
           backgroundColor: 'error.main',
@@ -38,3 +57,5 @@ export const JournaPage = () => {
 // JournalLayout y JournalPage https://www.udemy.com/course/react-cero-experto/learn/lecture/32284958#questions
 // NothingSelectedView - no hay nada seleccionado https://www.udemy.com/course/react-cero-experto/learn/lecture/32285152#questions
 // boton flotante https://www.udemy.com/course/react-cero-experto/learn/lecture/32285224#questions
+// crear una nueva nota: https://www.udemy.com/course/react-cero-experto/learn/lecture/20125334?start=15#questions
+// activar la nota creada: https://www.udemy.com/course/react-cero-experto/learn/lecture/20125338?start=315#questions

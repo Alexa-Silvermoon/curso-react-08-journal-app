@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material";
 import { red } from "@mui/material/colors";
 
-export const purpleTheme = createTheme({
+export const purpleTheme = createTheme({ // usado en AppTheme.jsx
 
     palette: {
 
