@@ -33,14 +33,14 @@ const formValidations = { // validacion personalizada, todas deben cumplirse par
 
 }
 
-export const RegisterPage = () => {
+export const RegisterPage = () => { // usado en AuthRoutes.jsx
 
   const dispatch = useDispatch();
 
   const [formsubmitted, setFormsubmitted] = useState( false );
   // la primera vez que se muestra el formulario, no aparezca en rojo con mensajes de error
 
-  const { status, errorMessage } = useSelector( state => state.auth ); // saber el estado de autenticacion
+  const { status, errorMessage } = useSelector( state => state.auth ); // saber el estado de autenticacion desde store.js > authSlice.js
   const isCheckingAuthentication = useMemo( () => status === 'checking', [ status ] ); // saber si justo el usuario se esta autenticando
 
   const { 

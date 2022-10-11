@@ -2,7 +2,8 @@ import { ThemeProvider } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 import { purpleTheme } from "./";
 
-export const AppTheme = ( { children } ) => {
+export const AppTheme = ( { children } ) => { // usado en JournalApp.jsx
+  
   return (
 
     <ThemeProvider theme={ purpleTheme }>

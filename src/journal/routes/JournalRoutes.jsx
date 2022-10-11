@@ -1,7 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { JournaPage } from '../pages/JournaPage';
 
-export const JournalRoutes = () => {
+export const JournalRoutes = () => { // usado en AppRouter.jsx
   return (
 
     <Routes>

@@ -13,7 +13,7 @@ export const checkingAuthentication = ( email, password ) => {
 
 }
 
-export const startGoogleSignIn = () => { // autenticacion de usuario a travez de Google
+export const startGoogleSignIn = () => { // autenticacion de usuario a travez de Google, usado en LoginPage.jsx
 
     return async( dispatch ) => {
 

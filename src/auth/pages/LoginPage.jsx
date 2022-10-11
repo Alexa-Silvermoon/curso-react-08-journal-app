@@ -15,11 +15,11 @@ const formData = {
   password: '' 
 }
 
-export const LoginPage = () => {
+export const LoginPage = () => { // usado en AuthRoutes.jsx
 
   const dispatch = useDispatch();
 
-  const { status, errorMessage } = useSelector( state => state.auth ); // useSelector apunta a la store.js saber el estado de autenticacion
+  const { status, errorMessage } = useSelector( state => state.auth ); // useSelector apunta a la store.js > authSlice.js
 
   // const { email, password, onInputChange } = useForm( /* { email: '', password: '' } */ );
   const { email, password, onInputChange } = useForm( formData );
@@ -31,7 +31,7 @@ export const LoginPage = () => {
 
     event.preventDefault(); // prevenir recarga del navegador despues del enter
 
-    console.log( { email, password } );
+    // console.log( { email, password } );
 
     dispatch( checkingAuthentication() ); //TODO: hacer el login manual del usuario
 
@@ -41,7 +41,7 @@ export const LoginPage = () => {
 
   const onGoogleSignIn = () => { // login de usuario con Google
 
-    console.log('onGoogleSignIn');
+    // console.log('onGoogleSignIn');
 
     dispatch( startGoogleSignIn() );
 
@@ -51,7 +51,10 @@ export const LoginPage = () => {
 
     <AuthLayout title="Login">
 
-          <form onSubmit={ onSubmit } className="animate__animated animate__fadeIn animate__faster">
+          <form
+            aria-label='submit-form' 
+            onSubmit={ onSubmit } 
+            className="animate__animated animate__fadeIn animate__faster">
             {/* animacion por Animate.css */}
 
             <Grid container>
@@ -73,6 +76,7 @@ export const LoginPage = () => {
                             placeholder="Contraseña"
                             fullWidth
                             name='password'
+                            inputProps={ { 'data-testid': 'password' } } // inputProps se usara en LoginPage.test.jsx
                             value={ password }
                             onChange={ onInputChange }
 
@@ -94,7 +98,7 @@ export const LoginPage = () => {
                 </Grid>
 
                 <Grid item xs={ 12 } sm={ 6 }>
-                  <Button disabled={ isAuthenticating } variant='contained' fullWidth onClick={ onGoogleSignIn }>
+                  <Button disabled={ isAuthenticating } variant='contained' fullWidth aria-label='google-btn' onClick={ onGoogleSignIn }>
                     <Google/>
                     <Typography sx={ { ml: 1 } } >Google</Typography> {/* ml margin left */}
                   </Button>

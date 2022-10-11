@@ -6,7 +6,7 @@ import { JournalRoutes } from "../journal/routes/JournalRoutes"
 import { CheckingAuth } from "../ui/"
 import { useCheckAuth } from "../hooks"
 
-export const AppRouter = () => {
+export const AppRouter = () => { // usado en JournalApp.jsx
 
   const status = useCheckAuth();
   

@@ -7,7 +7,7 @@ export const store = configureStore({
   reducer: {
 
     auth: authSlice.reducer, // name: 'auth',
-    journal: journalSlice.reducer,
+    journal: journalSlice.reducer, // name: 'journal',
 
   },
 

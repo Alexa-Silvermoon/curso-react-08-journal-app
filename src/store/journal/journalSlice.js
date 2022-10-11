@@ -33,7 +33,7 @@ export const journalSlice = createSlice({
             state.isSaving = false;
 
         },
-        setActiveNote: ( state, action ) => { // usado en sideBarItem.jsx y en thunks.js
+        setActiveNote: ( state, action ) => { // usado en sideBarItem.jsx, thunks.js, NoteView.jsx
 
             state.active = action.payload;
             state.messageSaved = '';

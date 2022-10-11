@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 import { Box, Divider, Drawer, Grid, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar, Typography } from "@mui/material";
 import { SideBarItem } from "./SideBarItem";
 
-export const SideBar = ( { drawerWidth = 240 } ) => {
+export const SideBar = ( { drawerWidth = 240 } ) => { // usado en JournalLayout.jsx
 
-    const { displayName } = useSelector( state => state.auth ); // apunta a store.js
-    const { notes } = useSelector( state => state.journal ); // apunta a store.js
+    const { displayName } = useSelector( state => state.auth ); // apunta a store.js > authSlice.js
+    const { notes } = useSelector( state => state.journal ); // apunta a store.js journalSlice.js
     // console.log( displayName );
 
   return (

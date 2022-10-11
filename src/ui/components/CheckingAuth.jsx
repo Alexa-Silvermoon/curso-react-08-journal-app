@@ -1,6 +1,6 @@
 import { CircularProgress, Grid } from "@mui/material"
 
-export const CheckingAuth = () => { 
+export const CheckingAuth = () => {  // usado en AppRouter.jsx
     
 
   return (

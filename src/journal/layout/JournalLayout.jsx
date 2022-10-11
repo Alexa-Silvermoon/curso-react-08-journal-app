@@ -4,7 +4,7 @@ import { NavBar, SideBar } from "../components";
 
 const drawerWidth = 240;
 
-export const JournalLayout = ( { children } ) => {
+export const JournalLayout = ( { children } ) => { // usado en JournalPage.jsx
   return (
 
     <Box sx={ { display: 'flex' } } className="animate__animated animate__fadeIn animate__faster" >

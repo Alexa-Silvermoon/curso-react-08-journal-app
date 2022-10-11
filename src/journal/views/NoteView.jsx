@@ -14,7 +14,7 @@ export const NoteView = () => { // usado en JournaPage.jsx
 
     const dispatch = useDispatch();
 
-    const { active:note, messageSaved, isSaving } = useSelector( state => state.journal ); // apunta a la store.js
+    const { active:note, messageSaved, isSaving } = useSelector( state => state.journal ); // apunta a la store.js > journalSlice.js
 
     const { body, title, date, onInputChange, formState } = useForm( note );
 

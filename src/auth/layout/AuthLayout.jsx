@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 
-export const AuthLayout = ( { children, title = '' } ) => {
+export const AuthLayout = ( { children, title = '' } ) => { // usado en LoginPage.jsx y RegisterPage.jsx
   
   return (
 

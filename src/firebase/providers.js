@@ -3,7 +3,7 @@ import { FirebaseAuth } from "./config";
 
 const googleProvider = new GoogleAuthProvider();
 
-export const signInWithGoogle = async() => {
+export const signInWithGoogle = async() => { // usado en thunks.js
 
     try {
         
@@ -51,11 +51,11 @@ export const registerUserWithEmailPassword = async( { email, password, displayNa
 
     try {
 
-        console.log( { email, password, displayName } );
+        // console.log( { email, password, displayName } );
 
         const resp = await createUserWithEmailAndPassword( FirebaseAuth, email, password ); // createUserWithEmailAndPassword es propio de firebase
         const { uid, photoURL } = resp.user;
-        console.log( resp );
+        // console.log( resp );
 
         //TODO: actualizar el displayName en Firebase
         await updateProfile( FirebaseAuth.currentUser, { displayName } );
@@ -82,11 +82,11 @@ export const loginWithEmailPassword = async( { email, password } ) => { //TODO: 
     
     try {
 
-        console.log( { email, password } );
+        // console.log( { email, password } );
         
         const resp = await signInWithEmailAndPassword( FirebaseAuth, email, password ); // signInWithEmailAndPassword es propio de firebase
         const { uid, photoURL, displayName } = resp.user; // no poner email aqui ya que sale error can not acces before initialization
-        console.log( resp );
+        // console.log( resp );
 
         return{
 

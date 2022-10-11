@@ -1,5 +1,5 @@
 # Notas
-Esto es un Journal App usando React Yarn Vite, con Material UI (MUI) y react-router-dom para proteger las rutas, contiene seguridad con un login y register muy potente gracias a su useForm y todo su auth, validaciones con firebase y animaciones con Animate.css, creacion de notas en Cloud Firestore, subida de imagenes a cloudinary, subida de urls de imagenes a Cloud Firestore, mostrar imagenes en la app, CRUD completo
+Esto es un Journal App usando React Yarn Vite, con Material UI (MUI) y react-router-dom para proteger las rutas, contiene seguridad con un login y register muy potente gracias a su useForm y todo su auth, validaciones con firebase y animaciones con Animate.css, creacion de notas en Cloud Firestore, subida de imagenes a cloudinary, subida de urls de imagenes a Cloud Firestore, mostrar imagenes en la app, CRUD completo, pruebas con Jest pero si se activa, bloquea el login con google, no se a que se deba
 
 No olvidar reconstruir la carpeta node_modules con el comando:
 ```
@@ -9,6 +9,11 @@ yarn install
 COMANDOS PARA EJECUTAR EN EL CMD Y CORRER LA APP:
 ```
 yarn dev
+```
+
+COMANDOS PARA EJECUTAR MODO DE PRUEBAS JEST:
+```
+yarn test
 ```
 
 VERIFICAR EN CHROME EL LOCALHOST:

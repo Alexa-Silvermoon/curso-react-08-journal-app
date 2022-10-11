@@ -4,7 +4,7 @@ import { FirebaseDB } from "../../firebase/config";
 import { fileUpload, loadNotes } from "../../helpers";
 import { savigNewNote, addNewEmpetyNote, setActiveNote, setNotes, setSaving, updateNote, setPhotosToActiveNote, deleteNoteById } from "./";
 
-export const startNewNote = () => {
+export const startNewNote = () => { // usado en JournalPage.jsx
 
     return async( dispatch, getState ) => {
 
@@ -21,8 +21,8 @@ export const startNewNote = () => {
 
         const { uid } = getState().auth;
 
-        console.log( getState() );
-        console.log( 'startNewNote' );
+        // console.log( getState() );
+        // console.log( 'startNewNote' );
 
         const newNote = {
 
@@ -44,7 +44,7 @@ export const startNewNote = () => {
 
         const setDocResp = await setDoc( newDoc, newNote ); // dispara la nota a la bd
 
-        console.log( { newDoc, setDocResp } );
+        // console.log( { newDoc, setDocResp } );
 
         newNote.id = newDoc.id; // crear propiedad id a newNote
 
@@ -79,7 +79,7 @@ export const startSaveNote = () => { // usado en NoteView.jsx
 
     const noteToFireStore = { ...note }; // exparsir la nota
     delete noteToFireStore.id; // eliminar la propiedad is para no sobre escribirla en la bd
-    console.log( noteToFireStore );
+    // console.log( noteToFireStore );
 
     const docRef = doc( FirebaseDB, `${ uid }/journal/notes/${ note.id }` ); // el camino a la nota en mi bd
     await setDoc( docRef, noteToFireStore, { merge: true } ); // le meto la nota actualizada a la bd pero sin re escribir el id de la nota
@@ -111,7 +111,7 @@ export const startUploadingFiles = ( files = [] ) => { // usado en NoteView.jsx
     const photosUrls = await Promise.all( fileUploadPromises ); 
     // hasta que todo se haya resuelto, no entregar el nuevo arreglo con las url secure_url
 
-    console.log( photosUrls ); // arreglo de urls
+    // console.log( photosUrls ); // arreglo de urls
 
     dispatch( setPhotosToActiveNote( photosUrls ) );
 

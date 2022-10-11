@@ -5,9 +5,9 @@ import { FirebaseAuth } from "../firebase/config";
 import { login, logout } from "../store/auth";
 import { startLoadingNotes } from "../store/journal";
 
-export const useCheckAuth = () => { // hacia AppRouter.jsx
+export const useCheckAuth = () => { // usado en AppRouter.jsx
 
-    const { status } = useSelector( state => state.auth ); // trae el state desde authSlice.js
+    const { status } = useSelector( state => state.auth ); // apunta a store.js > authSlice.js
     const dispatch = useDispatch();
     
     useEffect(() => {

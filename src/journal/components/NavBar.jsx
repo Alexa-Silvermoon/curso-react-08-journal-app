@@ -4,7 +4,7 @@ import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { startLogout } from '../../store/auth/thunks';
 
-export const NavBar = ( { drawerWidth } ) => { // drawerWidth = 240 px desde JournalLayout
+export const NavBar = ( { drawerWidth } ) => { // drawerWidth = 240 px desde JournalLayout.jsx
 
     const dispatch = useDispatch();
 

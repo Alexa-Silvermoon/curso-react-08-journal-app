@@ -5,11 +5,11 @@ import { JournalLayout } from "../layout/JournalLayout"
 import { NoteView, NothingSelectedView } from "../views"
 import { startNewNote } from "../../store/journal"
 
-export const JournaPage = () => {
+export const JournaPage = () => { // usado en JournalRoutes.jsx
 
   const dispatch = useDispatch();
 
-  const { isSaving, active } = useSelector( state => state.journal ); // useSelector apunta a la store.js
+  const { isSaving, active } = useSelector( state => state.journal ); // useSelector apunta a la store.js > journalSlice.js
 
   const onClickNewNote = () => {
 

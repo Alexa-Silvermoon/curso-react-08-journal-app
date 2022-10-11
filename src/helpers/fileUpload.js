@@ -32,8 +32,9 @@ export const fileUpload = async( file ) => { // usado en thunks.js
         
     } catch (error) {
 
-        console.log( error );
-        throw new Error( error.message );
+        // console.log( error );
+        // throw new Error( error.message );
+        return null;
         
     }
 }
